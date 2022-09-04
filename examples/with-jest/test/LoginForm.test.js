@@ -3,6 +3,29 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { LoginForm } from '../src/LoginForm'
 
+beforeAll(() => {
+  jest.useFakeTimers({
+    // doNotFake: [
+    //   'Date',
+    //   'hrtime',
+    //   'nextTick',
+    //   'performance',
+    //   'queueMicrotask',
+    //   'requestAnimationFrame',
+    //   'cancelAnimationFrame',
+    //   'requestIdleCallback',
+    //   'cancelIdleCallback',
+    //   'setImmediate',
+    //   'clearImmediate',
+    //   'setInterval',
+    //   'clearInterval',
+    //   'setTimeout',
+    //   'clearTimeout',
+    // ],
+  })
+})
+
+
 it('allows user to log in', async () => {
   render(<LoginForm />)
 
